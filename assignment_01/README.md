@@ -1,5 +1,6 @@
 ## Project Structure
 
+```
 assignment_01/
 │
 ├── driver/
@@ -8,3 +9,4 @@ assignment_01/
 ├── tests/
 ├── assignment1.exe
 └── README.md
+```
