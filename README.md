@@ -10,8 +10,8 @@ A common wrapper program is provided to launch individual assignments through a 
 
 ## Student Details
 
-**Student Name:** Johan Biju George 
-**Roll Number:** 2026AIM1008
+- **Student Name:** Johan Biju George 
+- **Roll Number:** 2026AIM1008
 
 ---
 
