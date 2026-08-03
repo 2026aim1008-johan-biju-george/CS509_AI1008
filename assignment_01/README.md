@@ -52,19 +52,19 @@ The following are excluded:
 - Output printing
 - File writing
 
-Average execution time is reported over multiple runs for GEMM.
+Average execution time is reported over multiple runs for GEMM (for matrix sizes <= 64).
 
 ## Test Files
 
 ### GEMM
 
-- gemm_test_01.txt (4×4)
-- gemm_test_02.txt (16×16)
-- gemm_test_03.txt (32×32)
-- gemm_test_04.txt (64×64)
-- gemm_test_05.txt (128×128)
-- gemm_test_06.txt (256×256)
-- gemm_test_07.txt (512×512)
+- `gemm_test_01.txt` (4×4)
+- `gemm_test_02.txt` (16×16)
+- `gemm_test_03.txt` (32×32)
+- `gemm_test_04.txt` (64×64)
+- `gemm_test_05.txt` (128×128)
+- `gemm_test_06.txt` (256×256)
+- `gemm_test_07.txt` (512×512)
 
 ## GEMM Results
 
