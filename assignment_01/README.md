@@ -25,8 +25,10 @@ assignment_01/
 
 ## Compilation
 
+The assignment was compiled using:
+
 ```
-g++ driver/driver.cpp src/*.cpp -o assignment1.exe
+g++ -O1 driver/driver.cpp src/*.cpp -o assignment1.exe
 ```
 
 ## Execution
