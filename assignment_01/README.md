@@ -11,7 +11,7 @@ assignment_01/
 └── README.md
 ```
 
-## Programs
+## Features
 
 - Simple GEMM
 - Blocking GEMM
