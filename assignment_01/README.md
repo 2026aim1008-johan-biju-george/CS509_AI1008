@@ -66,26 +66,14 @@ Average execution time is reported over multiple runs for GEMM.
 - gemm_test_06.txt (256×256)
 - gemm_test_07.txt (512×512)
 
-### BFS
+## GEMM Results
 
-- bfs_10.txt
-- bfs_100.txt
-- bfs_10000.txt
-- bfs_50000.txt
-- bfs_100000.txt
-
-### DFS
-
-- dfs_10.txt
-- dfs_100.txt
-- dfs_10000.txt
-- dfs_50000.txt
-- dfs_100000.txt
-
-### SSSP
-
-- sssp_10.txt
-- sssp_100.txt
-- sssp_10000.txt
-- sssp_50000.txt
-- sssp_100000.txt
+| Test File | Matrix Size | Expected Output | Actual Output | Simple Time (ms) | Blocking Time (ms) | Block Size | Status |
+|-----------|-------------|----------------|---------------|-----------------:|-------------------:|-----------:|--------|
+| gemm_test_01.txt | 4×4 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_02.txt | 16×16 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_03.txt | 32×32 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_04.txt | 64×64 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_05.txt | 128×128 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_06.txt | 256×256 | Correct matrix | Correct matrix | | | 16 | Pass |
+| gemm_test_07.txt | 512×512 | Correct matrix | Correct matrix | | | 16 | Pass |
