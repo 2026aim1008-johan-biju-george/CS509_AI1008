@@ -1,4 +1,4 @@
-#define BLOCK_SIZE 32
+#define BLOCK_SIZE 16
 
 #include "../headers/matrix_multiplication.h"
 #include <iostream>
@@ -80,39 +80,58 @@ void print_matrix(vector<vector<int>>& matrix, int rows, int cols){
 
 // Function to run simple matrix multiplication
 void run_simple_GEMM(vector<vector<int>>& A, vector<vector<int>>& B, vector<vector<int>>& C, int M, int K, int N){
-    auto start = chrono::high_resolution_clock::now(); // start timer for simple GEMM
-    simple_GEMM(A, B, C, M, K, N);
-    auto stop = chrono::high_resolution_clock::now(); // end timer for simple GEMM
+    double total_time = 0;
+    int runs = (M <= 64) ? 100 : 1; // assuming matrix sizes <= 64 are 'fast inputs', hence let's take 100 runs and find average time
+    
+    for(int r=0;r<runs;r++){
+        // reset output matrix for every run
+        for(int i=0;i<M;i++){
+            fill(C[i].begin(), C[i].end(), 0);
+        }
+        auto start = chrono::high_resolution_clock::now(); // start timer for simple GEMM
+        simple_GEMM(A, B, C, M, K, N);
+        auto stop = chrono::high_resolution_clock::now(); // end timer for simple GEMM
 
-    auto duration = chrono::duration<double, milli>(stop-start).count();
+        total_time += chrono::duration<double, milli>(stop - start).count(); // take sum of total times
+    }
 
     cout << "Algorithm: GEMM Simple" << endl;
-    cout << "Result matrix" << endl;
+    cout << "Result matrix\n";
     print_matrix(C, M, N);
-    cout << "Execution time: " << duration << " ms\n\n";
+    cout << "Execution time: " << total_time/runs << " ms\n\n";
 }
 
 // Function to run blocking matrix multiplication
 void run_blocking_GEMM(vector<vector<int>>& A, vector<vector<int>>& B, vector<vector<int>>& D, int M, int K, int N){
-    auto start = chrono::high_resolution_clock::now(); // start timer for blocking GEMM
-    blocking_GEMM(A, B, D, M, K, N, BLOCK_SIZE);
-    auto stop = chrono::high_resolution_clock::now(); // end timer for blocking GEMM
+    double total_time = 0;
+    int runs = (M <= 64) ? 100 : 1; // assuming matrix sizes <= 64 are 'fast inputs', hence let's take 100 runs and find average time
+    
+    for(int r=0;r<runs;r++){
+        // reset output matrix for every run
+        for(int i=0;i<M;i++){
+            fill(D[i].begin(), D[i].end(), 0);
+        }
+        auto start = chrono::high_resolution_clock::now(); // start timer for blocking GEMM
+        blocking_GEMM(A, B, D, M, K, N, BLOCK_SIZE);
+        auto stop = chrono::high_resolution_clock::now(); // end timer for blocking GEMM
 
-    auto duration = chrono::duration<double, milli>(stop-start).count();
+        total_time += chrono::duration<double, milli>(stop - start).count(); // take sum of total times
+    }
 
     cout << "Algorithm: GEMM Blocking" << endl;
-    cout << "Result matrix" << endl;
+    cout << "Result matrix\n";
     print_matrix(D, M, N);
-    cout << "Execution time: " << duration << " ms\n\n";
+    cout << "Execution time: " << total_time/runs << " ms\n\n";
 }
 
 // Function to check if two matrices are equal
 bool are_matrices_equal(vector<vector<int>>& A, vector<vector<int>>& B, int M, int N){
     for(int i=0;i<M;i++){
         for(int j=0;j<N;j++){
-            if(A[i][j]!=B[i][j])
+            if(A[i][j]!=B[i][j]){
                 return false;
-        }
+            }
+        } 
     }
     return true;
 }
@@ -126,17 +145,21 @@ void run_matrix_multiplication(){
     cout << "Enter input filename: ";
     cin >> filename;
     
+    // read input matrices from file
     if(!read_matrices(filename, A, B, M, K, N)){
         cout << "Error reading matrices from file: " << filename << endl;
         return;
     }
     
+    // initial Result matrices
     vector<vector<int>> C(M, vector<int> (N, 0));
     vector<vector<int>> D(M, vector<int> (N, 0));
-
+    
+    // run both algorithms
     run_simple_GEMM(A, B, C, M, K, N);
     run_blocking_GEMM(A, B, D, M, K, N);
-
+    
+    // check whether Result matrices are same or not
     if(are_matrices_equal(C, D, M, N))
         cout << "Both implementations produce the same result.\n";
     else
