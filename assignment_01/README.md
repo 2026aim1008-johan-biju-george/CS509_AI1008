@@ -14,7 +14,7 @@ The assignment evaluates the effect of cache-aware optimization using blocking a
 
 ---
 
-## Approach
+## Algorithms
 
 ### 1. Simple GEMM
 
