@@ -223,3 +223,5 @@ Although both algorithms have the same asymptotic complexity, blocked GEMM gener
 1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. *Introduction to Algorithms (CLRS)*.
 2. [Intel Developer Documentation on Cache Optimization](https://cdrdv2-public.intel.com/821613/355308-Optimization-Reference-Manual-050-Changes-Doc.pdf).
 3. [GCC Documentation for Compiler Optimization](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
+
+---
