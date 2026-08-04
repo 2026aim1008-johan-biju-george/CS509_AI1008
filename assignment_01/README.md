@@ -170,6 +170,10 @@ Outputs Match : Yes
 
 ---
 
+## Results
+
+### GEMM
+
 | Test File | Matrix Size | Expected Output | Actual Output | Simple Time (ms) | Blocking Time (ms) | Block Size | Status |
 |-----------|-------------|----------------|---------------|-----------------:|-------------------:|-----------:|--------|
 | `gemm_test_01.txt` | 4×4 and 4x4 | Result matrix | Same as Result matrix | 0.000304 | 0.000308 | 16 | Pass |
