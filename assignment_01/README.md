@@ -14,13 +14,13 @@ The assignment evaluates the effect of cache-aware optimization using blocking a
 
 ---
 
-## Approach
+## Algorithms
 
 ### 1. Simple GEMM
 
 The simple GEMM algorithm performs matrix multiplication using three nested loops.
 
-For every element `C[i][j]`, the algorithm computes:
+For every element `C[i][j]`:
 
 * Iterate through every row of matrix **A**.
 * Iterate through every column of matrix **B**.
@@ -34,7 +34,7 @@ This approach has poor cache locality because elements of matrix **B** are acces
 
 Blocked GEMM divides the matrices into smaller submatrices (blocks/tiles).
 
-Instead of processing the entire matrices at once, multiplication is performed block by block.
+Instead of processing the entire matrices at once, multiplication is performed block-by-block.
 
 Advantages:
 
@@ -55,6 +55,18 @@ Each input file contains:
 * Matrix dimensions `M K N`
 * Matrix **A** of size `M × K`
 * Matrix **B** of size `K × N`
+
+```
+M K N
+A row 0 values
+A row 1 values
+...
+A row M-1 values
+B row 0 values
+B row 1 values
+...
+B row K-1 values
+```
 
 Matrices contain integer values.
 
@@ -170,6 +182,10 @@ Outputs Match : Yes
 
 ---
 
+## Results
+
+### GEMM
+
 | Test File | Matrix Size | Expected Output | Actual Output | Simple Time (ms) | Blocking Time (ms) | Block Size | Status |
 |-----------|-------------|----------------|---------------|-----------------:|-------------------:|-----------:|--------|
 | `gemm_test_01.txt` | 4×4 and 4x4 | Result matrix | Same as Result matrix | 0.000304 | 0.000308 | 16 | Pass |
@@ -186,7 +202,7 @@ Outputs Match : Yes
 
 Execution time was measured using the C++ `chrono::high_resolution_clock`.
 
-Assuming that matrix sizes <= 64 are considered 'fast inputs', in that case we take the average execution time over 100 runs. Otherwise we take only the execution time only for a single run.
+Assuming that matrix sizes <= 64 are considered 'fast inputs', in that case we take the average execution time over 100 runs. Otherwise we take the execution time only for a single run.
 
 Compilation was performed using:
 
@@ -219,3 +235,5 @@ Although both algorithms have the same asymptotic complexity, blocked GEMM gener
 1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. *Introduction to Algorithms (CLRS)*.
 2. [Intel Developer Documentation on Cache Optimization](https://cdrdv2-public.intel.com/821613/355308-Optimization-Reference-Manual-050-Changes-Doc.pdf).
 3. [GCC Documentation for Compiler Optimization](https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html).
+
+---
