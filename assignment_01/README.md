@@ -168,16 +168,26 @@ For every test case:
 * Both algorithms produce identical output matrices.
 * Execution time of both algorithms is displayed.
 
-Example:
+Example (Test Case 1):
 
 ```
-===== Test Case 6 =====
-Matrix Dimensions: 256 x 256
+Algorithm: GEMM Simple
+Result matrix
+74 43 135 109 
+50 13 79 77 
+27 13 53 40 
+72 54 138 102 
+Execution time: 0.000226 ms
 
-Simple GEMM Execution Time : 58.2455 ms
-Blocked GEMM Execution Time : 39.4184 ms
+Algorithm: GEMM Blocking
+Result matrix
+74 43 135 109 
+50 13 79 77 
+27 13 53 40 
+72 54 138 102 
+Execution time: 0.000229 ms
 
-Outputs Match : Yes
+Both implementations produce the same result.
 ```
 
 ---
@@ -188,13 +198,13 @@ Outputs Match : Yes
 
 | Test File | Matrix Size | Expected Output | Actual Output | Simple Time (ms) | Blocking Time (ms) | Block Size | Status |
 |-----------|-------------|----------------|---------------|-----------------:|-------------------:|-----------:|--------|
-| `gemm_test_01.txt` | 4×4 and 4x4 | Result matrix | Same as Result matrix | 0.000304 | 0.000308 | 16 | Pass |
-| `gemm_test_02.txt` | 16×16 and 16x16 | Result matrix | Same as Result matrix | 0.016721 | 0.009004 | 16 | Pass |
-| `gemm_test_03.txt` | 32×32 and 32x32 | Result matrix | Same as Result matrix | 0.143815 | 0.06939 | 16 | Pass |
-| `gemm_test_04.txt` | 64×64 and 64x64 | Result matrix | Same as Result matrix | 0.970061 | 0.587555 | 16 | Pass |
-| `gemm_test_05.txt` | 128×128 and 128x128 | Result matrix | Same as Result matrix | 7.2933 | 4.3899 | 16 | Pass |
-| `gemm_test_06.txt` | 256×256 and 256x256 | Result matrix | Same as Result matrix | 58.2455 | 39.4184 | 16 | Pass |
-| `gemm_test_07.txt` | 512×512 and 512x512 | Result matrix | Same as Result matrix | 334.142 | 302.575 | 16 | Pass |
+| `gemm_test_01.txt` | 4×4 and 4x4 | Result matrix | Same as Result matrix | 0.000226 | 0.000229 | 16 | Pass |
+| `gemm_test_02.txt` | 16×16 and 16x16 | Result matrix | Same as Result matrix | 0.013126 | 0.006707 | 16 | Pass |
+| `gemm_test_03.txt` | 32×32 and 32x32 | Result matrix | Same as Result matrix | 0.100796 | 0.035055 | 16 | Pass |
+| `gemm_test_04.txt` | 64×64 and 64x64 | Result matrix | Same as Result matrix | 0.699189 | 0.296091 | 16 | Pass |
+| `gemm_test_05.txt` | 128×128 and 128x128 | Result matrix | Same as Result matrix | 7.3396 | 4.9382 | 16 | Pass |
+| `gemm_test_06.txt` | 256×256 and 256x256 | Result matrix | Same as Result matrix | 35.1845 | 18.5225 | 16 | Pass |
+| `gemm_test_07.txt` | 512×512 and 512x512 | Result matrix | Same as Result matrix | 284.908 | 183.47 | 16 | Pass |
 
 ---
 
