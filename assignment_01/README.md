@@ -56,6 +56,18 @@ Each input file contains:
 * Matrix **A** of size `M × K`
 * Matrix **B** of size `K × N`
 
+```
+M K N
+A row 0 values
+A row 1 values
+...
+A row M-1 values
+B row 0 values
+B row 1 values
+...
+B row K-1 values
+```
+
 Matrices contain integer values.
 
 ---
