@@ -202,7 +202,7 @@ Outputs Match : Yes
 
 Execution time was measured using the C++ `chrono::high_resolution_clock`.
 
-Assuming that matrix sizes <= 64 are considered 'fast inputs', in that case we take the average execution time over 100 runs. Otherwise we take only the execution time only for a single run.
+Assuming that matrix sizes <= 64 are considered 'fast inputs', in that case we take the average execution time over 100 runs. Otherwise we take the execution time only for a single run.
 
 Compilation was performed using:
 
