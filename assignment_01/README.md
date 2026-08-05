@@ -20,7 +20,7 @@ The assignment evaluates the effect of cache-aware optimization using blocking a
 
 The simple GEMM algorithm performs matrix multiplication using three nested loops.
 
-For every element `C[i][j]`, the algorithm computes:
+For every element `C[i][j]`:
 
 * Iterate through every row of matrix **A**.
 * Iterate through every column of matrix **B**.
@@ -34,7 +34,7 @@ This approach has poor cache locality because elements of matrix **B** are acces
 
 Blocked GEMM divides the matrices into smaller submatrices (blocks/tiles).
 
-Instead of processing the entire matrices at once, multiplication is performed block by block.
+Instead of processing the entire matrices at once, multiplication is performed block-by-block.
 
 Advantages:
 
