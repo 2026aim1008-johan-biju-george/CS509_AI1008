@@ -42,7 +42,7 @@ bool read_graph(string& filename, vector<vector<pair<int, int>>>& adj, int& V, i
 // Function to print adjacency list
 void print_adjacency_list(vector<vector<pair<int, int>>>& adj){
     for(auto neighbors : adj){
-        cout << neighbors.size() << " ";
+        cout << neighbors.size() << " "; // degree
         for(auto neighbor : neighbors){
             cout << neighbor.first << "(" << neighbor.second << ") ";
         }
@@ -93,7 +93,7 @@ void print_CSR(CSRGraph& csr){
 void run_csr_graph(){
     int V, E, source;
     string filename; // input filename
-    vector<vector<pair<int, int>>> adj; // adjacency list
+    vector<vector<pair<int, int>>> adj; // adjacency list (weighted)
 
     cout << "Enter input filename: ";
     cin >> filename;
