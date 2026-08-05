@@ -56,6 +56,8 @@ Each input file contains:
 * Matrix **A** of size `M × K`
 * Matrix **B** of size `K × N`
 
+Matrices contain integer values.
+
 ```
 M K N
 A row 0 values
@@ -68,7 +70,19 @@ B row 1 values
 B row K-1 values
 ```
 
-Matrices contain integer values.
+Example (Test case 1):
+
+```
+4 4 4
+6 2 5 6 
+0 0 6 7 
+3 0 1 3 
+9 3 3 3 
+5 3 9 6 
+1 7 7 4 
+6 1 5 7 
+2 1 7 5 
+```
 
 ---
 
