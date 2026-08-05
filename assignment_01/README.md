@@ -140,6 +140,7 @@ Example (Test case 1):
 | `gemm_test_xx.txt` | Contains matrix dimensions followed by the elements of matrices A and B.                                              |
 | `graph_xx.txt` | Contains the number of vertices, number of edges, and the adjacency list (weighted or unweighted) used for CSR generation. |
 
+---
 
 ## Compilation
 
@@ -156,6 +157,29 @@ g++ -O1 driver/driver.cpp src/*.cpp -o assignment1.exe
 ```
 ./assignment1
 ```
+
+### Execution Steps
+
+1. Compile the project.
+2. Run the executable.
+3. Generate the required graph test files.
+4. Select 'Matrix Multiplication'.
+5. Enter the required input file or choose the appropriate test case.
+6. Both Simple GEMM and Blocking GEMM algorithms are executed.
+7. The algorithm execution times are displayed.
+
+---
+
+### Performance Measurement
+
+The reported execution time includes **only the execution of both algorithms**.
+
+The following operations are excluded from the measured time:
+
+* Reading the input file
+* Parsing the input
+* Matrix generation
+* Output printing
 
 ---
 
