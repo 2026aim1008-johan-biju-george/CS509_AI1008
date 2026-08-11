@@ -40,6 +40,11 @@ void generate_unweighted_graph(int V, int E, int source, bool directed=false){
 
         adj[u].push_back(v);
         edges++;
+
+        // for undirected graph, store both directions
+        if(!directed && edges <= E){
+            adj[v].push_back(u);
+        }
     }
 
     // Second pass: add remaining random edges
@@ -88,6 +93,7 @@ void generate_unweighted_graph(int V, int E, int source, bool directed=false){
     
     // write source node to file
     fout << "SOURCE " << source << endl;
+    fout.close();
 }
 
 // Main function to generate unweighted graph test cases

@@ -31,7 +31,7 @@ void generate_weighted_graph(int V, int E, int source, bool directed=false){
 
     vector<vector<pair<int, int>>> adj(V); // adjacency list (weighted graph)
 
-    // First pass: one outgoing edge per vertex (so that the graph is connected)
+    // First pass: add one outgoing edge for as many vertices as possible
     int edges = 0;
     for(int u=0;u<V && edges<E;u++){
         int v;
@@ -42,6 +42,11 @@ void generate_weighted_graph(int V, int E, int source, bool directed=false){
         int weight = rand() % 10 + 1;
         adj[u].push_back({v, weight});
         edges++;
+
+        // for undirected graph, store both directions.
+        if(!directed && edges <= E){
+            adj[v].push_back({u, weight});
+        }
     }
 
     // Second pass: add remaining random edges
@@ -90,6 +95,7 @@ void generate_weighted_graph(int V, int E, int source, bool directed=false){
 
     // write source vertex to file
     fout << "SOURCE " << source << endl;
+    fout.close();
 }
 
 // Main function to generate weighted graph test cases
