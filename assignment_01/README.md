@@ -56,6 +56,8 @@ Each input file contains:
 * Matrix **A** of size `M × K`
 * Matrix **B** of size `K × N`
 
+Matrices contain integer values.
+
 ```
 M K N
 A row 0 values
@@ -68,7 +70,19 @@ B row 1 values
 B row K-1 values
 ```
 
-Matrices contain integer values.
+Example (Test case 1):
+
+```
+4 4 4
+6 2 5 6 
+0 0 6 7 
+3 0 1 3 
+9 3 3 3 
+5 3 9 6 
+1 7 7 4 
+6 1 5 7 
+2 1 7 5 
+```
 
 ---
 
@@ -126,6 +140,7 @@ Matrices contain integer values.
 | `gemm_test_xx.txt` | Contains matrix dimensions followed by the elements of matrices A and B.                                              |
 | `graph_xx.txt` | Contains the number of vertices, number of edges, and the adjacency list (weighted or unweighted) used for CSR generation. |
 
+---
 
 ## Compilation
 
@@ -142,6 +157,29 @@ g++ -O1 driver/driver.cpp src/*.cpp -o assignment1.exe
 ```
 ./assignment1
 ```
+
+### Execution Steps
+
+1. Compile the project.
+2. Run the executable.
+3. Generate the required graph test files.
+4. Select 'Matrix Multiplication'.
+5. Enter the required input file or choose the appropriate test case.
+6. Both Simple GEMM and Blocking GEMM algorithms are executed.
+7. The algorithm execution times are displayed.
+
+---
+
+### Performance Measurement
+
+The reported execution time includes **only the execution of both algorithms**.
+
+The following operations are excluded from the measured time:
+
+* Reading the input file
+* Parsing the input
+* Matrix generation
+* Output printing
 
 ---
 
