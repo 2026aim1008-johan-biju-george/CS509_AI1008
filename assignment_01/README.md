@@ -262,7 +262,7 @@ Blocked GEMM provides improved cache performance for larger matrices, resulting 
 
 ---
 
-## Time Complexity
+## Complexity
 
 ### Simple GEMM
 
