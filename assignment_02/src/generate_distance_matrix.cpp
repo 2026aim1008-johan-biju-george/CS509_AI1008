@@ -62,8 +62,6 @@ void generate_distance_matrix(int V, double edge_probability=0.3, bool allow_neg
 }
 
 void generate_distance_matrix_tests(){
-    generate_distance_matrix(10);
-    generate_distance_matrix(100);
     generate_distance_matrix(500);
     generate_distance_matrix(1000);
     generate_distance_matrix(2000);

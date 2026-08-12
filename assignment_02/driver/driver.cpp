@@ -18,6 +18,7 @@ int main(){
         cout << "2. Generate Floyd-Warshall Test Files\n";
         cout << "3. Run Bellman-Ford Algorithm\n";
         cout << "4. Run Floyd-Warshall Algorithm\n";
+        cout << "5. Cross-check Bellman-Ford and Floyd-Warshall\n";
         cout << "0. Exit\n";
 
         cout << "Enter choice: ";
@@ -39,7 +40,10 @@ int main(){
             case 4:
                 run_floyd_warshall_test();
                 break;
-
+                
+            case 5:
+                run_cross_checks();
+                break;
             case 0:
                 break;
 

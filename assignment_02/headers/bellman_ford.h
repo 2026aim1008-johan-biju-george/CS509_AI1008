@@ -3,6 +3,7 @@
 
 #include "../../assignment_01/headers/csr_graph_creation.h"
 
+bool bellman_ford(int source, CSRGraph& graph, int V, vector<int>& distance);
 void run_bellman_ford_test();
 
 #endif
