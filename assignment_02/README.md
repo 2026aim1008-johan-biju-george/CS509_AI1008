@@ -16,9 +16,9 @@
    - Computes the shortest distance between every pair of vertices.
    - Supports negative edge weights as long as there is no negative-weight cycle.
 
-The assignment uses CSR (Compressed Sparse Row) representation for Bellman-Ford. The CSR conversion function from Assignment 1 is reused instead of being copied into this assignment.
+The assignment uses **CSR (Compressed Sparse Row)** representation for Bellman-Ford. The CSR conversion function from Assignment 1 is **reused** instead of being copied into this assignment.
 
-Floyd-Warshall directly uses a dense adjacency matrix.
+Floyd-Warshall directly uses a **dense distance matrix**.
 
 ---
 
@@ -50,6 +50,7 @@ The update is:
 ```
 distance[i][j] = min(distance[i][j], distance[i][k] + distance[k][j])
 ```
+
 After the algorithm finishes, a negative value on any diagonal entry `distance[i][i]` indicates a negative-weight cycle.
 
 Because of its cubic time and quadratic memory requirements, Floyd-Warshall is tested only for 10, 100, 500, 1000, 2000 vertices.
@@ -91,7 +92,7 @@ The graph is directed and edge weights may be negative.
 
 ### Floyd-Warshall Input
 
-Floyd-Warshall uses a dense adjacency matrix.
+Floyd-Warshall uses a dense distance matrix.
 
 The format is:
 
@@ -281,7 +282,7 @@ tests/fw_1000.txt
 tests/fw_2000.txt
 ```
 
-The required graph sizes follow the assignment specification. Bellman-Ford uses the full range up to 100,000 vertices, while Floyd-Warshall uses the reduced range because of its huge time and space requirements.
+The required graph sizes follow the assignment specification. Bellman-Ford uses the full range up to 100,000 vertices, while Floyd-Warshall uses the reduced range because of its cubic time and quadratic memory requirements.
 
 ---
 
