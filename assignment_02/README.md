@@ -9,9 +9,9 @@
 | Bellman-Ford       | `bf_10000.txt`     |          10000 |       20000 | Weighted Adjacency List        |       0 |   Yes   | N/A         | N/A         |  5998.78           |  Fail  |
 | Floyd-Warshall      | `fw_500.txt`    |          500 |  N/A | Distance Matrix |       N/A |  No    | Distance Matrix | Correct Distance Matrix |  3009.66             |  Pass  |
 | Bellman-Ford       | `bf_50000.txt`   |        50000 |     100000 | Weighted Adjacency List        |       0 |  Yes  | N/A         | N/A        |   290953            |  Fail  |
-| Floyd-Warshall       | `fw_1000.txt`   |        1000 |  N/A | Distance Matrix        |       N/A |      | Distance Matrix        | Correct Distance Matrix        |          |  Pass  |
+| Floyd-Warshall       | `fw_1000.txt`   |        1000 |  N/A | Distance Matrix        |       N/A |  No    | Distance Matrix        | Correct Distance Matrix        |  28013.1        |  Pass  |
 | Bellman-Ford      | `bf_100000.txt`  |        100000 |     200000 | Weighted Adjacency List |       0 |   Yes   | N/A | N/A  |  941781            |  Pass  |
-| Floyd-Warshall       | `fw_2000.txt`   |        2000 |  N/A | Distance Matrix        |       N/A   |   | Distance Matrix        | Correct Distance Matrix        |             |  Pass  |
+| Floyd-Warshall       | `fw_2000.txt`   |        2000 |  N/A | Distance Matrix        |       N/A   |  No | Distance Matrix  | Correct Distance Matrix        |    143179         |  Pass  |
 
 ---
 
