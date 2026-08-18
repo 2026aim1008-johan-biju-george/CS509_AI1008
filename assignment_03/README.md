@@ -2,9 +2,9 @@
 
 ## Assignment Details
 
-- **Type:** Single
+**Type:** Single
 
-- **Objective:** The objective of the assignment is to implement two Minimum Spanning Tree (MST) algorithms:
+**Objective:** The objective of the assignment is to implement two Minimum Spanning Tree (MST) algorithms:
 
 - Prim's Algorithm
 - Kruskal's Algorithm
