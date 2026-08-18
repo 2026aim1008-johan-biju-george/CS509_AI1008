@@ -64,7 +64,7 @@ The implementation extracts the undirected edges from the CSR representation and
 
 The edges are then sorted using the default `sort()` function.
 
-A Disjoint Set Union (DSU) structure with path compression and union by size is used to detect cycles.
+A **Disjoint Set Union (DSU)** structure with path compression and union by size is used to detect cycles.
 
 Steps:
 
