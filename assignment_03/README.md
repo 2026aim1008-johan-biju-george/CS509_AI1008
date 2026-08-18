@@ -418,7 +418,7 @@ The edge lists may differ when multiple valid MSTs exist.
 
 ## 9. Performance Measurement
 
-Only the **execution time of the MST algorithm** is measured.
+Only the **execution time** of the MST algorithm is measured.
 
 The following operations are not included in the reported time:
 
@@ -429,7 +429,7 @@ The following operations are not included in the reported time:
 * Result printing
 * File writing
 
-Execution time is reported in milliseconds.
+Execution time is reported in **milliseconds (ms)**.
 
 For Kruskal's Algorithm, the following operations are included in the measured time:
 
@@ -448,7 +448,7 @@ The timer starts immediately before the MST algorithm is called and stops immedi
 
 Expected output format:
 
-```text
+```
 Algorithm: Prim's MST
 MST edges:
 0 1 2
@@ -465,7 +465,7 @@ Execution time: <value> ms
 
 Expected output format:
 
-```text
+```
 Algorithm: Kruskal's MST
 MST edges:
 0 1 2
