@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void run_assignment1() {
+void run_assignment1(){
 #ifdef _WIN32
     system("cd assignment_01 && assignment1.exe");
 #else
@@ -11,12 +11,20 @@ void run_assignment1() {
 #endif
 }
 
-void run_assignment2() {
+void run_assignment2(){
 #ifdef _WIN32
     system("cd assignment_02 && assignment2.exe");
 #else
     system("cd assignment_02 && ./assignment2");
 #endif
+}
+
+void run_assignment3(){
+    #ifdef _WIN32
+        system("cd assignment_03 && assignment3.exe");
+    #else
+        system("cd assignment_03 && ./assignment3");
+    #endif
 }
 
 int main(){
@@ -26,6 +34,7 @@ int main(){
         cout << "CS509 Lab Wrapper\n";
         cout << "1. Assignment 1\n";
         cout << "2. Assignment 2\n";
+        cout << "3. Assignment 3\n";
         cout << "0. Exit\n\n";
         cout << "Enter choice: ";
         cin >> choice;
@@ -38,6 +47,10 @@ int main(){
 
             case 2:
                 run_assignment2();
+                break;
+
+            case 3:
+                run_assignment3();
                 break;
 
             case 0:
