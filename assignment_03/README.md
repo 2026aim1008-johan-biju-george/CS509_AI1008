@@ -9,9 +9,9 @@
 - Prim's Algorithm
 - Kruskal's Algorithm
 
-Both algorithms are implemented for weighted, undirected and connected graphs.
+Both algorithms are implemented for **weighted, undirected and connected graphs**.
 
-The input graph is initially provided as an adjacency list. Before either MST algorithm is called, the graph is converted into Compressed Sparse Row (CSR) format using the CSR conversion function from the previous assignment.
+The input graph is initially provided as an **adjacency list**. Before either MST algorithm is called, the graph is converted into **Compressed Sparse Row (CSR) format** using the CSR conversion function.
 
 Both algorithms are run on the same graph inputs so that their MST weights and execution times can be compared.
 
@@ -23,7 +23,7 @@ The required MST graph sizes are:
 - 50,000 vertices
 - 100,000 vertices
 
-Large graphs are kept sparse, with approximately 2V to 4V edges where practical.
+Large graphs are kept **sparse**, with approximately `2V` to `4V` edges where practical.
 
 ---
 
