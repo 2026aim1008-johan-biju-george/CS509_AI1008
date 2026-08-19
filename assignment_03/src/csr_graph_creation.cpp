@@ -42,7 +42,7 @@ CSRGraph convert_weighted_graph_to_CSR(vector<vector<pair<int, int>>>& adj){
             csr.values.push_back(neighbor.second); // edge weights
             csr.col_idx.push_back(neighbor.first); // populate column indices by adding neighbors to col_idx vector
         }
-        // populate row pointers by keeping track of number of edges for each vertex
+        // cumulative edge count so far -> end offset for this vertex's edges
         csr.row_ptr.push_back(csr.col_idx.size());
     }
     return csr;

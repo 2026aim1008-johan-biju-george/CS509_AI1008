@@ -39,37 +39,6 @@ bool read_distance_matrix(string& filename, vector<vector<int>>& distance, int& 
     return true;
 }
 
-// function to cross check Bellman-Ford and Floyd-Warshall results
-bool cross_check_bellman_ford(int V, vector<vector<int>>& fw_distance, CSRGraph& graph){
-    for(int source = 0; source < V; source++){
-        vector<int> bf_distance(V, INT_MAX);
-
-        bool no_negative_cycle = bellman_ford(source, graph, V, bf_distance);
-
-        // cannot compare shortest paths if a negative cycle exists
-        if(!no_negative_cycle){
-            cout << "Negative cycle detected during Bellman-Ford " << "from source " << source << ".\n";
-            return false;
-        }
-
-        // compare Bellman-Ford result with corresponding Floyd-Warshall row
-        for(int node=0;node<V;node++){
-            if(bf_distance[node] != fw_distance[source][node]){
-                cout << "Cross-check failed.\n";
-                cout << "Source: " << source << endl;
-                cout << "Node: " << node << endl;
-                cout << "Bellman-Ford: " << bf_distance[node] << endl;
-                cout << "Floyd-Warshall: " << fw_distance[source][node] << endl;
-                return false;
-            }
-        }
-    }
-
-    cout << "Cross-check passed. Bellman-Ford distances match Floyd-Warshall for every source node.\n";
-    return true;
-}
-
-
 void floyd_warshall(int V, vector<vector<int>>& distance){
     // go through all k intermediate nodes
     for(int k=0;k<V;k++){
