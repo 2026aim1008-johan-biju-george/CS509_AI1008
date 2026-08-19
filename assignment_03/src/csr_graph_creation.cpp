@@ -28,7 +28,6 @@ bool read_weighted_graph(string& filename, vector<vector<pair<int, int>>>& adj, 
             adj[node].push_back({neighbor, weight});
         }
     }
-
     fin.close();
     return true;
 }
@@ -46,6 +45,5 @@ CSRGraph convert_weighted_graph_to_CSR(vector<vector<pair<int, int>>>& adj){
         // populate row pointers by keeping track of number of edges for each vertex
         csr.row_ptr.push_back(csr.col_idx.size());
     }
-
     return csr;
 }

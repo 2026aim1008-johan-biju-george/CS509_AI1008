@@ -70,9 +70,9 @@ int kruskal_MST(int V, CSRGraph& csr, vector<vector<int>>& mst_edges){
     sort(edges.begin(), edges.end());
 
     Disjoint_Set ds(V);
-
+    
+    // visit each edge and add it to MST if the connected nodes of that edge aren't in same Disjoint Set
     int total_weight = 0;
-
     for(auto edge:edges){
         int weight = edge[0];
         int u = edge[1];

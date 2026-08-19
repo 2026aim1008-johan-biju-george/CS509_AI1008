@@ -12,17 +12,18 @@ int prim_MST(int V, CSRGraph& csr, vector<vector<int>>& mst_edges){
 
     // Store edges in the form {weight, u, v} into min-priority queue
     priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
-
+    
+    int source = 0;
     int total_weight = 0;
-    visited[0] = 1;
+    visited[source] = 1;
 
-    // Add all edges of node 0
-    int start = csr.row_ptr[0];
-    int end = csr.row_ptr[1];
+    // Add all edges of source node into priority queue
+    int start = csr.row_ptr[source];
+    int end = csr.row_ptr[source + 1];
     for(int i=start;i<end;i++){
         int v = csr.col_idx[i];
         int weight = csr.values[i];
-        pq.push({weight, 0, v});
+        pq.push({weight, source, v});
     }
 
     while(!pq.empty() && mst_edges.size() < V-1){
@@ -38,17 +39,16 @@ int prim_MST(int V, CSRGraph& csr, vector<vector<int>>& mst_edges){
             continue;
         }
 
-        visited[v] = 1; // Add edge to MST
-        mst_edges.push_back({u, v, weight});
+        visited[v] = 1;
+        mst_edges.push_back({u, v, weight}); // Add edge to MST
         total_weight += weight;
 
-        // Add edges from new node
+        // Add edges from new node into priority queue
         start = csr.row_ptr[v];
         end = csr.row_ptr[v + 1];
         for(int i=start;i<end;i++){
             int next = csr.col_idx[i];
             int weight = csr.values[i];
-
             if(!visited[next]){
                 pq.push({weight, v, next});
             }

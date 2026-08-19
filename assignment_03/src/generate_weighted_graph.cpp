@@ -73,7 +73,6 @@ void generate_weighted_graph(int V, int E){
         }
         fout << endl;
     }
-
     fout.close();
 }
 
