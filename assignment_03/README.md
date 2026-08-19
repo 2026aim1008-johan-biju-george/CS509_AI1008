@@ -2,16 +2,16 @@
 
 ## Assignment Details
 
-- **Type:** Single
+**Type:** Single
 
-- **Objective:** The objective of the assignment is to implement two Minimum Spanning Tree (MST) algorithms:
+**Objective:** The objective of the assignment is to implement two Minimum Spanning Tree (MST) algorithms:
 
 - Prim's Algorithm
 - Kruskal's Algorithm
 
-Both algorithms are implemented for weighted, undirected and connected graphs.
+Both algorithms are implemented for **weighted, undirected and connected graphs**.
 
-The input graph is initially provided as an adjacency list. Before either MST algorithm is called, the graph is converted into Compressed Sparse Row (CSR) format using the CSR conversion function from the previous assignment.
+The input graph is initially provided as an **adjacency list**. Before either MST algorithm is called, the graph is converted into **Compressed Sparse Row (CSR) format** using the CSR conversion function.
 
 Both algorithms are run on the same graph inputs so that their MST weights and execution times can be compared.
 
@@ -23,7 +23,7 @@ The required MST graph sizes are:
 - 50,000 vertices
 - 100,000 vertices
 
-Large graphs are kept sparse, with approximately 2V to 4V edges where practical.
+Large graphs are kept **sparse**, with approximately `2V` to `4V` edges where practical.
 
 ---
 
@@ -64,7 +64,7 @@ The implementation extracts the undirected edges from the CSR representation and
 
 The edges are then sorted using the default `sort()` function.
 
-A Disjoint Set Union (DSU) structure with path compression and union by size is used to detect cycles.
+A **Disjoint Set Union (DSU)** structure with path compression and union by size is used to detect cycles.
 
 Steps:
 
@@ -418,7 +418,7 @@ The edge lists may differ when multiple valid MSTs exist.
 
 ## 9. Performance Measurement
 
-Only the **execution time of the MST algorithm** is measured.
+Only the **execution time** of the MST algorithm is measured.
 
 The following operations are not included in the reported time:
 
@@ -429,7 +429,7 @@ The following operations are not included in the reported time:
 * Result printing
 * File writing
 
-Execution time is reported in milliseconds.
+Execution time is reported in **milliseconds (ms)**.
 
 For Kruskal's Algorithm, the following operations are included in the measured time:
 
@@ -448,7 +448,7 @@ The timer starts immediately before the MST algorithm is called and stops immedi
 
 Expected output format:
 
-```text
+```
 Algorithm: Prim's MST
 MST edges:
 0 1 2
@@ -465,7 +465,7 @@ Execution time: <value> ms
 
 Expected output format:
 
-```text
+```
 Algorithm: Kruskal's MST
 MST edges:
 0 1 2
